@@ -5,9 +5,12 @@ services:
     plan: free
     buildCommand: npm install
     startCommand: npm start
+    preDeployCommand: rm -rf node_modules package-lock.json
     rootDir: .
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: "3000"
+      - key: NODE_OPTIONS
+        value: --experimental-sqlite
