@@ -5,8 +5,7 @@ services:
     plan: free
     buildCommand: npm install
     startCommand: npm start
-    preDeployCommand: rm -rf node_modules package-lock.json
-    rootDir: .
+    preDeployCommand: rm -rf /src node_modules package-lock.json 2>/dev/null || true    rootDir: .
     envVars:
       - key: NODE_ENV
         value: production
